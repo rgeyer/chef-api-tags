@@ -1,0 +1,82 @@
+{
+  "license": "All rights reserved",
+  "suggestions": {
+  },
+  "dependencies": {
+  },
+  "conflicting": {
+  },
+  "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+  "description": "Installs/Configures rs_tags",
+  "providing": {
+  },
+  "platforms": {
+  },
+  "version": "0.0.1",
+  "maintainer": "Ryan J. Geyer",
+  "recipes": {
+    "rs_tags::default": "Does some testing with tags using Chef resources as well as the REST API to show some inconsistencies"
+  },
+  "replacing": {
+  },
+  "maintainer_email": "me@ryangeyer.com",
+  "name": "rs_tags",
+  "groupings": {
+  },
+  "attributes": {
+    "rs_tags/server_name": {
+      "required": "required",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "type": "string",
+      "recipes": [
+        "rs_tags::default"
+      ],
+      "display_name": "RightScale dashboard nickname",
+      "description": "The RightScale dashboard nickname, this should be set to ENV:RS_SERVER_NAME"
+    },
+    "rs_tags/rest_acct_num": {
+      "required": "required",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "type": "string",
+      "recipes": [
+        "rs_tags::default"
+      ],
+      "display_name": "RightScale Account Number",
+      "description": "Your RightScale account number"
+    },
+    "rs_tags/rest_pass": {
+      "required": "required",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "type": "string",
+      "recipes": [
+        "rs_tags::default"
+      ],
+      "display_name": "REST API Password",
+      "description": "The password used to log into the RightScale dashboard, and the REST API"
+    },
+    "rs_tags/rest_user": {
+      "required": "required",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "type": "string",
+      "recipes": [
+        "rs_tags::default"
+      ],
+      "display_name": "REST API Username",
+      "description": "The email address used to log into the RightScale dashboard, and the REST API"
+    }
+  },
+  "recommendations": {
+  }
+}
