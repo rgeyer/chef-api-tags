@@ -18,6 +18,11 @@ bash "Install rest_connection gem" do
   code "/opt/rightscale/sandbox/bin/gem install rest_connection"
 end
 
+directory "/etc/rest_connection" do
+  recursive true
+  action :create
+end
+
 template "/etc/rest_connection/rest_api_config.yaml" do
   source "rest_api_config.yaml.erb"
 end
