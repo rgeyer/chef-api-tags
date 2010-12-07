@@ -19,7 +19,7 @@ bash "Install rest_connection gem" do
 end
 
 template "/etc/rest_connection/rest_api_config.yaml" do
-  source "rest_api_config_yaml.yaml.erb"
+  source "rest_api_config.yaml.erb"
 end
 
 # Add a tag in the dashboard tag:source=dashboard
