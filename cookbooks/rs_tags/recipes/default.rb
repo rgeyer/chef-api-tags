@@ -47,7 +47,7 @@ ruby_block "Check for presense of dashboard tags in rest_connection" do
     require 'rubygems'
     require 'rest_connection'
 
-    tag_result = Tag.search('server', ["tag:source=dashboard"])
+    tag_result = Tag.search('ec2_instance', ["tag:source=dashboard"])
     Chef::Log::info "Expecting 1 server returned by REST API for tag:source=dashboard, found #{tag_result.size}"
   end
 end
@@ -75,7 +75,7 @@ ruby_block "Check for presense of chef tags in rest_connection" do
     require 'rubygems'
     require 'rest_connection'
 
-    tag_result = Tag.search('server', ["tag:source=chef"])
+    tag_result = Tag.search('ec2_instance', ["tag:source=chef"])
     Chef::Log::info "Expecting 1 server returned by REST API for tag:source=chef, found #{tag_result.size}"
   end
 end
@@ -87,7 +87,7 @@ ruby_block "Add tag with REST api" do
     require 'rest_connection'
 
     thisServer = Server.find(:first) { |s| s.nickname == node[:rs_tags][:server_name] }
-    Tag.set(thisServer.href, ["tag:source=rest"])
+    Tag.set(thisServer.current_instance_href, ["tag:source=rest"])
     # Note that tag is not added to dashboard! -- Create recipe to "reset" this tag.
   end
 end
@@ -110,10 +110,12 @@ ruby_block "Check for presense of rest tags in rest_connection" do
     require 'rubygems'
     require 'rest_connection'
 
-    tag_result = Tag.search('server', ["tag:source=rest"])
+    tag_result = Tag.search('ec2_instance', ["tag:source=rest"])
     Chef::Log::info "Expecting 1 server returned by REST API for tag:source=rest, found #{tag_result.size}"
 
-    thisServer = Server.find(:first) { |s| s.nickname == node[:rs_tags][:server_name] }
-    Chef::Log::info "Even though the above test returned #{tag_result.size}, the list of tags for this server looks like #{thisServer.tags.inspect}"
+    # After some tweaking this is no longer the case.  I was setting and searching for tags on the server, not the server instance.
+    # And rest_connection 0.13 did have a bug relating to searching tags.
+    #thisServer = Server.find(:first) { |s| s.nickname == node[:rs_tags][:server_name] }
+    #Chef::Log::info "Even though the above test returned #{tag_result.size}, the list of tags for this server looks like #{thisServer.tags.inspect}"
   end
 end
