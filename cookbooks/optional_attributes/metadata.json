@@ -1,0 +1,54 @@
+{
+  "license": "All rights reserved",
+  "suggestions": {
+  },
+  "dependencies": {
+  },
+  "conflicting": {
+  },
+  "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\nWe will run the recipe 3 times and observe different results.  It's easiest to observe the different results if different values are provided for the inputs for each execution.\n\n1. Run the optional_attributes::default recipe once only providing the required input value.  Notice that neither attribute is contains a value when logged using Chef::Log.info\n2. Run the optional_attributes::default recipe once providing both input values.  Notice that both attributes contain a value when logged using Chef::Log.info\n3. Run the optional_attributes::default recipe once only providing the required input value.  Notice that both attributes contain the values from the previous execution of the recipe when logged using Chef::Log.info\n",
+  "description": "Installs/Configures optional_attributes",
+  "providing": {
+  },
+  "platforms": {
+  },
+  "version": "0.0.1",
+  "maintainer": "Ryan J. Geyer",
+  "recipes": {
+    "optional_attributes::default": "Demonstrates some weirdness with attributes"
+  },
+  "replacing": {
+  },
+  "maintainer_email": "me@ryangeyer.com",
+  "name": "optional_attributes",
+  "groupings": {
+  },
+  "attributes": {
+    "optional_attributes/required": {
+      "required": "required",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "type": "string",
+      "recipes": [
+
+      ],
+      "display_name": "Required Attribute"
+    },
+    "optional_attributes/optional": {
+      "required": "optional",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "type": "string",
+      "recipes": [
+
+      ],
+      "display_name": "Optional Attribute"
+    }
+  },
+  "recommendations": {
+  }
+}

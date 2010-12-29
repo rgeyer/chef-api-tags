@@ -1,0 +1,12 @@
+= DESCRIPTION:
+
+= REQUIREMENTS:
+
+= ATTRIBUTES:
+
+= USAGE:
+We will run the recipe 3 times and observe different results.  It's easiest to observe the different results if different values are provided for the inputs for each execution.
+
+1. Run the optional_attributes::default recipe once only providing the required input value.  Notice that neither attribute is contains a value when logged using Chef::Log.info
+2. Run the optional_attributes::default recipe once providing both input values.  Notice that both attributes contain a value when logged using Chef::Log.info
+3. Run the optional_attributes::default recipe once only providing the required input value.  Notice that both attributes contain the values from the previous execution of the recipe when logged using Chef::Log.info
