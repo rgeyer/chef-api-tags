@@ -17,7 +17,7 @@ include_recipe "rubygems::default"
 
 # Install Rest_Connection for later use
 gem_package "rest_connection" do
-  version "0.15"
+  version "0.0.15"
   action :install
 end
 #bash "Install rest_connection gem" do
