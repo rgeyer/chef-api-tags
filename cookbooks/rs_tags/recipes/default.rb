@@ -13,10 +13,16 @@
 # and make sure it's duplicated in the REST API.  Might also consider doing this with an "orchestrator"
 # server..
 
+include_recipe "rubygems::default"
+
 # Install Rest_Connection for later use
-bash "Install rest_connection gem" do
-  code "/opt/rightscale/sandbox/bin/gem install rest_connection"
+gem_package "rest_connection" do
+  version "0.15"
+  action :install
 end
+#bash "Install rest_connection gem" do
+#  code "/opt/rightscale/sandbox/bin/gem install rest_connection"
+#end
 
 directory "/etc/rest_connection" do
   recursive true
