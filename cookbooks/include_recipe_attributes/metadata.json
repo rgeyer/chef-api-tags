@@ -1,0 +1,72 @@
+{
+  "license": "All rights reserved",
+  "suggestions": {
+  },
+  "dependencies": {
+  },
+  "conflicting": {
+  },
+  "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+  "description": "Installs/Configures include_recipe_attributes",
+  "providing": {
+  },
+  "platforms": {
+  },
+  "version": "0.0.1",
+  "maintainer": "Ryan J. Geyer",
+  "recipes": {
+    "include_recipe_attributes::parent": "The parent recipe, which includes other recipes that should be able to access the attributes",
+    "include_recipe_attributes::child": "The child recipe, included by include_recipe_attributes::parent which should be able to access the attributes which they share"
+  },
+  "replacing": {
+  },
+  "maintainer_email": "me@ryangeyer.com",
+  "name": "include_recipe_attributes",
+  "groupings": {
+  },
+  "attributes": {
+    "include_recipe_attributes/parent_only_1": {
+      "required": "optional",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "type": "string",
+      "recipes": [
+        "include_recipe_attributes::parent"
+      ],
+      "display_name": "Parent Only #1",
+      "description": "An attribute which is only available to the parent recipe"
+    },
+    "include_recipe_attributes/parent_and_child_1": {
+      "required": "optional",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "type": "string",
+      "recipes": [
+        "include_recipe_attributes::parent",
+        "include_recipe_attributes::child"
+      ],
+      "display_name": "Parent & Child #1",
+      "description": "An attribute which is available to both parent and child recipes"
+    },
+    "include_recipe_attributes/parent_and_child_2": {
+      "required": "optional",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "type": "string",
+      "recipes": [
+        "include_recipe_attributes::parent",
+        "include_recipe_attributes::child"
+      ],
+      "display_name": "Parent & Child #2",
+      "description": "An attribute which is available to both parent and child recipes"
+    }
+  },
+  "recommendations": {
+  }
+}
