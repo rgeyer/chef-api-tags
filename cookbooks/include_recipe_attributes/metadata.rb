@@ -24,5 +24,4 @@ attribute "include_recipe_attributes/parent_and_child_1",
 attribute "include_recipe_attributes/parent_and_child_2",
   :display_name => "Parent & Child #2",
   :description => "An attribute which is available to both parent and child recipes",
-  :recipes => ["include_recipe_attributes::parent", "include_recipe_attributes::child"],
-  :required => "required"
+  :recipes => ["include_recipe_attributes::parent", "include_recipe_attributes::child"]

@@ -53,7 +53,7 @@
       "description": "An attribute which is available to both parent and child recipes"
     },
     "include_recipe_attributes/parent_and_child_2": {
-      "required": "required",
+      "required": "optional",
       "calculated": false,
       "choice": [
 
