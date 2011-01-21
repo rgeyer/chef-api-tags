@@ -12,14 +12,17 @@ recipe "include_recipe_attributes::child", "The child recipe, included by includ
 attribute "include_recipe_attributes/parent_only_1",
   :display_name => "Parent Only #1",
   :description => "An attribute which is only available to the parent recipe",
-  :recipes => ["include_recipe_attributes::parent"]
+  :recipes => ["include_recipe_attributes::parent"],
+  :required => "required"
 
 attribute "include_recipe_attributes/parent_and_child_1",
   :display_name => "Parent & Child #1",
   :description => "An attribute which is available to both parent and child recipes",
-  :recipes => ["include_recipe_attributes::parent", "include_recipe_attributes::child"]
+  :recipes => ["include_recipe_attributes::parent", "include_recipe_attributes::child"],
+  :required => "required"
 
 attribute "include_recipe_attributes/parent_and_child_2",
   :display_name => "Parent & Child #2",
   :description => "An attribute which is available to both parent and child recipes",
-  :recipes => ["include_recipe_attributes::parent", "include_recipe_attributes::child"]
+  :recipes => ["include_recipe_attributes::parent", "include_recipe_attributes::child"],
+  :required => "required"
