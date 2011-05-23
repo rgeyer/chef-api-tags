@@ -53,9 +53,11 @@ send_hash = {
 Chef::Log.info("Sending the following hash to remote_recipe::remote_recipe_pong to recipient list #{node[:remote_recipe][:from]}")
 Chef::Log.info(send_hash.to_yaml)
 
+# TODO: This assumes were running ping & pong on the same server.  node[:remote_recipe][:from] can not be used because
+# I foolishly named this cookbook "remote_recipe". I'll have to refactor later.
 remote_recipe "Ping" do
   recipe "remote_recipe::remote_recipe_pong"
   attributes(send_hash)
-  recipients node[:remote_recipe][:from]
+  recipients_tags ["remote_recipe:target=true"]
   scope :single
 end

@@ -35,8 +35,12 @@ end
 
 if(!node[:foo])
   Chef::Log.info("(FAIL) Expected node[:foo] to be populated but it was null")
+else
+  Chef::Log.info("(PASS) node[:foo] has contents")
 end
 
 if(!node[:baz])
   Chef::Log.info("(FAIL) Expected node[:foo] to be populated but it was null")
+else
+  Chef::Log.info("(PASS) node[:baz] has contents")
 end
