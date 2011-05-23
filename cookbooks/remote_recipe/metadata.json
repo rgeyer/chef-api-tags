@@ -1,0 +1,81 @@
+{
+  "dependencies": {
+    "skeme": ">= 0.0.0"
+  },
+  "name": "remote_recipe",
+  "maintainer_email": "me@ryangeyer.com",
+  "attributes": {
+    "baz": {
+      "required": "required",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "type": "string",
+      "recipes": [
+        "remote_recipe::remote_recipe_pong"
+      ]
+    },
+    "foo": {
+      "required": "optional",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "type": "string",
+      "recipes": [
+        "remote_recipe::remote_recipe_ping",
+        "remote_recipe::remote_recipe_pong"
+      ]
+    },
+    "remote_recipe/two": {
+      "required": "optional",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "type": "string",
+      "recipes": [
+        "remote_recipe::remote_recipe_ping",
+        "remote_recipe::remote_recipe_pong"
+      ]
+    },
+    "remote_recipe/one": {
+      "required": "required",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "type": "string",
+      "recipes": [
+        "remote_recipe::remote_recipe_ping",
+        "remote_recipe::remote_recipe_pong"
+      ]
+    }
+  },
+  "license": "Apache2",
+  "suggestions": {
+  },
+  "platforms": {
+  },
+  "maintainer": "Ryan J. Geyer",
+  "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+  "version": "0.0.1",
+  "recommendations": {
+  },
+  "recipes": {
+    "remote_recipe::remote_recipe_pong": "Called by remote_recipe::remote_recipe_ping",
+    "remote_recipe::remote_recipe_test": "Kicks off the whole test",
+    "remote_recipe::remote_recipe_ping": "Called by remote_recipe::remote_recipe_test, then calls remote_recipe::remote_recipe_pong",
+    "remote_recipe::remote_recipe_setup": "Run on two instances which you want to use to test remote recipe"
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "Tests the RightScale remote_recipe Resource Provider",
+  "providing": {
+  }
+}
