@@ -37,6 +37,8 @@ end
 
 if(!node[:foo])
   Chef::Log.info("(FAIL) Expected node[:foo] to be populated but it was null")
+else
+  Chef::Log.info("(PASS) node[:foo] has contents")
 end
 
 send_hash = {
@@ -48,7 +50,7 @@ send_hash = {
   :baz => "nothing"
 }
 
-Chef::Log.info("Sending the following hash to remote_recipe::remote_recipe_ping on the first server with the tag remote_recipe:target=true")
+Chef::Log.info("Sending the following hash to remote_recipe::remote_recipe_pong to recipient list #{node[:remote_recipe][:from]}")
 Chef::Log.info(send_hash.to_yaml)
 
 remote_recipe "Ping" do
