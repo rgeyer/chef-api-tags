@@ -41,7 +41,7 @@
       ]
     },
     "remote_recipe/one": {
-      "required": "required",
+      "required": "optional",
       "calculated": false,
       "choice": [
 

@@ -13,7 +13,7 @@ recipe "remote_recipe::remote_recipe_ping", "Called by remote_recipe::remote_rec
 recipe "remote_recipe::remote_recipe_pong", "Called by remote_recipe::remote_recipe_ping"
 
 attribute "remote_recipe/one",
-  :required => "required",
+  :required => "optional",
   :recipes => ["remote_recipe::remote_recipe_ping","remote_recipe::remote_recipe_pong"]
 
 attribute "remote_recipe/two",
