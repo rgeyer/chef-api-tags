@@ -15,6 +15,8 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
+include_recipe "skeme::default"
+
 skeme_tag "remote_recipe:target=true" do
   action :add
 end
